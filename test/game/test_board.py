@@ -9,6 +9,10 @@ from lucesfuera.game.board import Posicion
         ((-5, 0), (-5, 1) ),  #4
         ((-5, -5), (-5, -4) ),#5
         ((-5, 100), (-5, 101) ),#6
+        ((10, 10), (10, 11) ), #7
+        ((-10, -10), (-10, -9) ),#8
+        ((5, -5), (5, -4) ),   #9
+        ((-5, 5), (-5, 6) ),   #10
     ]
 )
 def test_posicion_deberia_mover_a_la_derecha(pos_inicial:tuple, posicion_final:tuple):
@@ -26,9 +30,12 @@ def test_posicion_deberia_mover_a_la_derecha(pos_inicial:tuple, posicion_final:t
         ((-5, 0), (-5, -1) ), #4
         ((-5, -5), (-5, -6) ),#5
         ((-5, 100), (-5, 99) ),#6
+        ((10, 10), (10, 9) ),  #7
+        ((-10, -10), (-10, -11) ),#8
+        ((5, -5), (5, -6) ),   #9
+        ((-5, 5), (-5, 4) ),   #10
     ]
 )
-
 def test_posicion_deberia_mover_a_la_izquierda(pos_inicial:tuple, posicion_final:tuple):
     p: Posicion = Posicion(fila=pos_inicial[0], columna=pos_inicial[1])
     resultado: Posicion = p.new_posicion_izquierda()
@@ -45,9 +52,12 @@ def test_posicion_deberia_mover_a_la_izquierda(pos_inicial:tuple, posicion_final
         ((-5, 0), (-6, 1) ),  #4
         ((-5, -5), (-6, -4) ),#5
         ((-5, 100), (-6, 101) ),#6
+        ((10, 10), (9, 11) ),  #7
+        ((-10, -10), (-11, -9) ),#8
+        ((5, -5), (4, -4) ),   #9
+        ((-5, 5), (-6, 6) ),   #10
     ]
 )
-
 def test_posicion_deberia_mover_arriba(pos_inicial:tuple, posicion_final:tuple):
     p: Posicion = Posicion(fila=pos_inicial[0], columna=pos_inicial[1])
     resultado: Posicion = p.new_posicion_arriba()
@@ -63,9 +73,12 @@ def test_posicion_deberia_mover_arriba(pos_inicial:tuple, posicion_final:tuple):
         ((-5, 0), (-6, 0) ),  #4
         ((-5, -5), (-6, -5) ),#5
         ((-5, 100), (-6, 100) ),#6
+        ((10, 10), (9, 10) ),  #7
+        ((-10, -10), (-11, -10) ),#8
+        ((5, -5), (4, -5) ),   #9
+        ((-5, 5), (-6, 5) ),   #10
     ]
 )
-
 def test_posicion_deberia_mover_abajo(pos_inicial:tuple, posicion_final:tuple):
     p: Posicion = Posicion(fila=pos_inicial[0], columna=pos_inicial[1])
     resultado: Posicion = p.new_posicion_abajo()
@@ -81,9 +94,12 @@ def test_posicion_deberia_mover_abajo(pos_inicial:tuple, posicion_final:tuple):
         ((-5, 0), (-6, 0) ),  #4
         ((-5, -5), (-6, -5) ),#5
         ((-5, 100), (-6, 100) ),#6
+        ((10, 10), (9, 10) ),  #7
+        ((-10, -10), (-11, -10) ),#8
+        ((5, -5), (4, -5) ),   #9
+        ((-5, 5), (-6, 5) ),   #10
     ]
 )
-
 def test_posicion_deberia_mover_diagonal_arriba(pos_inicial:tuple, posicion_final:tuple):
     p: Posicion = Posicion(fila=pos_inicial[0], columna=pos_inicial[1])
     resultado: Posicion = p.new_posicion_diagonal_arriba()
@@ -99,9 +115,12 @@ def test_posicion_deberia_mover_diagonal_arriba(pos_inicial:tuple, posicion_fina
         ((-5, 0), (-4, -1) ), #4
         ((-5, -5), (-4, -6) ),#5
         ((-5, 100), (-4, 99) ),#6
+        ((10, 10), (11, 9) ),  #7
+        ((-10, -10), (-9, -11) ),#8
+        ((5, -5), (6, -6) ),   #9
+        ((-5, 5), (-4, 4) ),   #10
     ]
 )
-
 def test_posicion_deberia_mover_diagonal_abajo(pos_inicial:tuple, posicion_final:tuple):
     p: Posicion = Posicion(fila=pos_inicial[0], columna=pos_inicial[1])
     resultado: Posicion = p.new_posicion_diagonal_abajo()
